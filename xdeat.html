@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>XDeat</title>
+    <meta name="description" content="一个告诉你今天可能吃什么的网页">
+    <meta name="author" content="@kokdemo">
+	
+	<link href="bootstrap.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+		<div style="padding: 20px 0px;">
+		<h1>XDeat
+			<small>click when you hungry</small>
+		</h1>
+		</div>
+		<div class="alert-message block-message warning">
+		<p>这是一个实验性的页面，如果你不知道要吃什么，请输入要吃东西的备选项，<span class="label important">以空格分开</span>，由系统来帮你随机选择,因此而产生的个人问题，系统不承担任何责任。</p>
+		</div>
+		
+		<div class="well" style="padding: 14px 19px;">
+        <p>试试已经输入好的选项,比如</p>
+		<button class="btn primary" id="drink"  onclick="input1()">喝什么</button>
+		<button class="btn" id="eat1"  onclick="input2()">吃什么［西电］</button>
+		</div>
+		
+		<textarea  class="xxlarge" id="inputStr" rows="5" name="input"></textarea>
+		<span class="help-block"> 自己随便输点选项，记得以空格分开哦 </span><br>
+		<script language="javascript" type="text/javascript">
+			function input1()
+			{
+				document.getElementById('inputStr').value = '白水 可乐 雪碧（七喜，健力宝） 芬达（美年达） 果味奶饮料 果汁 啤酒 红酒 白酒 红茶 绿茶 咖啡 牛奶 啥都不喝'
+			}
+			function input2()
+			{
+				document.getElementById('inputStr').value = '炸酱面 干拌面 馄饨 米线 快餐 盖浇饭 包子 凉皮 炒饭 桶饼 锅巴饭 饺子 啥都不吃'
+			}
+        </script>
+	
+		<div class="well" style="padding: 14px 19px;">
+		<button class="btn success" type="submit" onclick="callback()">随机一下</button>
+		<script language="javascript" type="text/javascript">
+			function callback()
+			{
+				str=document.getElementById('inputStr').value;;
+				var chooses = new Array()
+				chooses=str.split(" ")
+				var GetRandomn = 1;
+			function GetRandomFunc(n)
+			{
+				GetRandomn=Math.floor(Math.random()*n+1)
+			}
+			GetRandomFunc(chooses.length);
+			document.write("<br>"+"系统帮您随机出的答案是："+"<h2>"+chooses[GetRandomn-1]+"</h2>"+"<br>"+"你一共输入了"+chooses.length+"个选项"+"<br>"+"<br>"+"这样的答案你满意吗？不满意的话自行后退吧，其实你还可以试者随机点别的东西:)"+"<br>");
+			var str="<button class=\"btn back\" type=\"submit\" onclick=\"window.history.back()\" >后退</button>"
+			document.write(str);			
+			
+			}
+		</script>
+		</div>
+		
+		<div>
+        <ul>
+		<li>更新日志：</li>
+        <li>2011.4.11   一会吃什么？经过一次修复【终于】可以在线使用</li>
+		<li>2011.4.12   加入一个蛋疼的功能，也就是改标题的功能233（现已去除）</li>
+		<li>2011.4.22   加入备选项功能，稍微调整了一些页面内容</li>
+		<li>2011.10.13  尝试加入一个css并添加了一个有用的组</li>
+		<li>2012.1.17   用bootstrap重写本页面,并删掉了上一次更新加入的css</li>
+		<li>2012.2.27   给结果页面加上了一个后退按钮，试图使用ajax实现效果失败</li>
+		<li>kokdemo的blog：<a href="http://wocai.de/b">【我猜的】一个连自己都不相信的人</a><br/></li>
+		<li>xdeat的项目主页：<a href="https://github.com/xdlinux/xdeat">https://github.com/xdlinux/xdeat</a></li>		
+		</ul>
+		</div>
+	</div>	
+</body>
+</html>
