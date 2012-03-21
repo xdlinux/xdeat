@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        XDeat mobile
+        </title>
+       <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-theme="a" data-role="header" data-position="inline">
+                <h3>
+                    XDeat mobile
+                </h3>
+				<a href="http://eat.xiuxiu.de" data-icon="check" data-theme="b">桌面版</a>
+            </div>
+
+            <div data-role="content">
+                <div>
+                    <b>
+                        请输入您想随机的备选项，以空格分开
+                    </b>
+                </div>
+                <a data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input1()">
+                    吃点啥(xd)
+                </a>
+                <a data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input2()">
+                    喝点啥
+                </a>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <textarea id="inputStr" placeholder="">
+                        </textarea>
+                    </fieldset>
+                </div>
+            </div>
+		<a id="ans" data-role="button" data-theme="b" data-icon="refresh" data-iconpos="left"  onclick="rand()">随机一下</a>
+        </div>
+        <script type="text/javascript" src="random.js"></script>
+	<script type="text/javascript" src="text.js"></script>
+    </body>
+</html>
