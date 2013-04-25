@@ -1,0 +1,26 @@
+#inputs,#clickbutton{
+	text-align: center;
+}
+
+body{text-align:center;}
+
+
+
+#update{
+	text-align: left;
+}
+
+.demo-headline {
+padding: 73px 0 40px;
+}
+
+#ans{
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+h1{
+	font-family:"微软雅黑";
+}

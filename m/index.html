@@ -2,49 +2,62 @@
 <html>
     <head>
         <title>
-        XDeat mobile
+        XDeat mobile-随时随地知道自己吃什么
         </title>
-       <meta charset="utf-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/jquery.mobile-1.3.0-beta.1.min.css" />
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.mobile-1.3.0-beta.1.min.js"></script>
         
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
-        </script>
-        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
-        </script>
     </head>
-    <body>
-        <div data-role="page" id="page1">
-            <div data-theme="a" data-role="header" data-position="inline">
-                <h3>
-                    XDeat mobile
-                </h3>
-				<a href="http://eat.xiuxiu.de" data-icon="check" data-theme="b">桌面版</a>
-            </div>
 
+    <body>
+        <div data-role="page" id="index">
+            <div data-role="header">
+                <a href="http://eat.xiuxiu.de" data-icon="check" data-theme="b">桌面版</a>
+                <h2>
+                    XDeat-mobile
+                </h2>
+                <a href="#gear" data-icon="gear" class="ui-btn-right">选项</a>               
+            </div>
+            <p>
+            每次想到要吃什么的时候就纠结万分！！！
+            </p>
+            <p>如果你饿了并且不知道要吃什么的话，使劲戳下面的按钮！</p>
+            <br>
+            <br>
+            <div >
+                <a id="ans" data-role="button" data-theme="b" data-icon="refresh" data-iconpos="left" style="height:40px; vertical-align:middle;">老纸饿死了，使劲戳！</a>
+            </div>  
+            
+        </div>
+       <div data-role="page" id="gear" data-theme="c" data-url="two" tabindex="0" class="ui-page ui-body-c" style="min-height: 643px;">
+            <div data-role="header" class="ui-header ui-bar-a" role="banner">
+                <h1 class="ui-title" role="heading" aria-level="1">选项页面</h1>
+                <a href="#index" data-icon="back" class="ui-btn-right" data-theme="b">返回</a>
+            </div>
             <div data-role="content">
+                
                 <div>
-                    <b>
+                    <p>
                         请输入您想随机的备选项，以空格分开
-                    </b>
+                    </p>
                 </div>
-                <a data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input2()">
-                    吃点啥(xd)
+                <a id="eat" data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input2()">
+                    吃点啥(西电)
                 </a>
-                <a data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input1()">
+                <a id="drink" data-role="button" data-inline="true" data-transition="none" data-theme="c" onclick="input1()">
                     喝点啥
                 </a>
-                <div data-role="fieldcontain">
+                <div data-role="fieldcontain" style="width:100%">
                     <fieldset data-role="controlgroup">
-                        <textarea id="inputStr" placeholder="">
-                        </textarea>
+                        <textarea id="inputStr" >炸酱面 干拌面 馄饨 米线 蒸菜 快餐 盖浇饭 包子 凉皮 炒饭 桶饼 锅巴饭 饺子 啥都不吃</textarea>
                     </fieldset>
                 </div>
             </div>
-		<a id="ans" data-role="button" data-theme="b" data-icon="refresh" data-iconpos="left"  onclick="rand()">随机一下</a>
         </div>
-        <script type="text/javascript" src="random.js"></script>
-	<script type="text/javascript" src="text.js"></script>
+    <script type="text/javascript" src="../js/random.js"></script>
+	<script type="text/javascript" src="../js/text.js"></script> 
     </body>
 </html>
