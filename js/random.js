@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
-	$( "#anspop" ).on( "click",{itsid:"popup"},rand);
-	$( "#ans" ).on( "click",{itsid:"ans"},rand);
-	$( "#answer" ).on( "click",{itsid:"ans"},rand);
+	$( "#anspop" ).on( "click",{x:"popup"},rand);
+	$( "#ans" ).on( "click",{x:"ans"},rand);
+	//$( "#answer" ).on( "click",{x:"ans"},rand);
 	inputtext("eat");
 	inputall("drink");
 	inputall("eat");
@@ -18,7 +18,7 @@ function inputall(x){
 };
 
        			
-function rand(itsid){	
+function rand(x){	
 	var str=$("#inputStr").val();
 	var chooses = new Array();
 	chooses=str.split(" ");
