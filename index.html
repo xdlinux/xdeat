@@ -10,33 +10,26 @@
 		<title>XDeat</title>
 	</head>
 	<body>
-		<div  class="container palette palette-concrete" id="ans">
+		<div class="container palette palette-concrete" id="clickArea">
 			<div class="demo-headline">
-        		<h1 class="demo-logo" id="title">
-          			XDeat
-          			
-       			 </h1>
-       			 <h3 id="randtime">饿的时候不需要纠结</h3>
+        		<h1 class="demo-logo" id="title">XDeat</h1>
+       			<h3 id="randTime">饿的时候不需要纠结</h3>
+                <div id="count"></div>
       		</div>
-
       		<div id="choices" class="row">
-      			
       			<div id="inputs">
-					<button class="btn" id="drink">喝什么</button>
-					<button class="btn" id="eat">  吃什么</button>
-					<button class="btn" id="code"> 写什么</botton>
+                    <button class="btn noClick" id="yours">我想随机一下</button>
+					<button class="btn noClick" id="drink">喝什么</button>
+					<button class="btn noClick" id="eat">  吃什么</button>
+					<button class="btn noClick" id="code"> 写什么</button>
 				</div>
-
       		</div>
-
-      		<div id="inputarea" >
-      			<input type="text" value="" placeholder="Inactive" id="inputStr" class="span7">    			
+      		<div id="inputArea">
+      			<input type="text" class="noClick" value="" id="inputStr">
       		</div>
-
-      		
     	</div>
 		<footer class="footer" id="footer">
-			<div id="update">
+			<div id="update" style="display: none">
 				<ul>
 					<li>更新日志：</li>
 					<li>2011.4.11   一会吃什么？经过一次修复【终于】可以在线使用</li>
@@ -48,7 +41,8 @@
 					<li>2012.3.12   用新的函数代替了document.write，但是因为新函数需要一个id，因此无法将函数外置，增加了一个彩蛋，看源码就能知道。</li>
 					<li>2012.3.21   用jquery mobile简单的制作了移动页面</li>
 					<li>2013.1.27   这么久才更新真是对不起……这次重写了移动版xdeat，优化了用户体验。</li>
-					<li>2013.4.23   重构了主要的页面，用jquery重写了函数，增加了移动端自动跳转</li>	
+					<li>2013.4.23   重构了主要的页面，用jquery重写了函数，增加了移动端自动跳转</li>
+                    <li>2014.4.10   重新完善一次逻辑</li>
 				</ul>
 			</div>
      		<div class="container">
@@ -57,7 +51,8 @@
      		</div>
     	</footer>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/text.js"></script>
 		<script type="text/javascript" src="js/random.js"></script>
-		<script type="text/javascript" src="js/text.js"></script>
+
 	</body>
 </html>

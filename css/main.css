@@ -2,9 +2,16 @@
 	text-align: center;
 }
 
-body{text-align:center;}
+body{text-align:center;
+}
 
+#clickArea{
+    padding: 0px;
+}
 
+#inputStr{
+    width:40% ;
+}
 
 #update{
 	text-align: left;
@@ -14,11 +21,21 @@ body{text-align:center;}
 padding: 73px 0 40px;
 }
 
-#ans{
+#clickArea{
 	top: 0px;
 	bottom: 0px;
 	width: 100%;
 	height: 100%;
+}
+
+footer{
+position: fixed; !important;
+width: 100%;
+bottom: 0;
+z-index: 5;
+height:50px;
+_position:absolute;
+_top:expression(document.body.scrollTop+document.body.clientHeight-this.clientHeight);
 }
 
 h1{

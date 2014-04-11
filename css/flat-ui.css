@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+@import url("");
 @font-face {
   font-family: "Flat-UI-Icons-16";
   src: url("../fonts/Flat-UI-Icons-16.eot");
@@ -8,7 +8,7 @@
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-  font-family: "Flat-UI-Icons-16";
+  font-family: "黑体";
   content: attr(data-icon);
   speak: none;
   font-weight: normal;
