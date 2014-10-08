@@ -6,20 +6,18 @@ jQuery(document).ready(function($) {
         storage.pageLoadCount = parseInt(storage.getItem("pageLoadCount")) + 1;//必须格式转换
 //
 //  diff days
-    var clickTime = new Date().getFullYear()+"-"+new Date().getMonth()+"-"+new Date().getDate();
-    var Days = GetDateDiff( storage.lastTime, clickTime, "day");
+//    var clickTime = new Date().getFullYear()+"-"+new Date().getMonth()+"-"+new Date().getDate();
+//    var Days = GetDateDiff( storage.lastTime, clickTime, "day");
 //
-    $("#randTime").html("你上次在"+storage.lastTime+"选择了"+storage.lastChoose+"，距今"+Days+"天");
+    $("#randTime").html("你上次选择了"+storage.lastChoose);
     $( "#clickArea").click(function(){
         var randomStr = $("#inputStr").val();
 //  local storage about the time, chooses and the count of the clicks
         if (!storage.getItem("lastChoose")) storage.setItem("lastChoose","");
             storage.lastChoose = rand();
 
-
         if (!storage.getItem("lastTime")) storage.setItem("lastTime",clickTime);
             storage.lastTime = clickTime;
-
 
         if (!storage.getItem("clickCount")) storage.setItem("clickCount",0);
             storage.clickCount = parseInt(storage.getItem("clickCount"))+1;//必须格式转换
@@ -45,35 +43,35 @@ var n=1;
 * 返回精度为：秒，分，小时，天
 */
 
-function GetDateDiff(startTime, endTime, diffType) {
-    //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式
-    startTime = startTime.replace(/\-/g, "/");
-    endTime = endTime.replace(/\-/g, "/");
+// function GetDateDiff(startTime, endTime, diffType) {
+//     //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式
+//     startTime = startTime.replace(/\-/g, "/");
+//     endTime = endTime.replace(/\-/g, "/");
 
-    //将计算间隔类性字符转换为小写
-    diffType = diffType.toLowerCase();
-    var sTime = new Date(startTime);      //开始时间
-    var eTime = new Date(endTime);  //结束时间
-    //作为除数的数字
-    var divNum = 1;
-    switch (diffType) {
-        case "second":
-            divNum = 1000;
-            break;
-        case "minute":
-            divNum = 1000 * 60;
-            break;
-        case "hour":
-            divNum = 1000 * 3600;
-            break;
-        case "day":
-            divNum = 1000 * 3600 * 24;
-            break;
-        default:
-            break;
-    }
-    return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
-}
+//     //将计算间隔类性字符转换为小写
+//     diffType = diffType.toLowerCase();
+//     var sTime = new Date(startTime);      //开始时间
+//     var eTime = new Date(endTime);  //结束时间
+//     //作为除数的数字
+//     var divNum = 1;
+//     switch (diffType) {
+//         case "second":
+//             divNum = 1000;
+//             break;
+//         case "minute":
+//             divNum = 1000 * 60;
+//             break;
+//         case "hour":
+//             divNum = 1000 * 3600;
+//             break;
+//         case "day":
+//             divNum = 1000 * 3600 * 24;
+//             break;
+//         default:
+//             break;
+//     }
+//     return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
+// }
 
 
 
